@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author Juan
  */
-class Espacio {
+public class Espacio {
     private int idSpacios;
     private String mombre;
     private int capacidad;

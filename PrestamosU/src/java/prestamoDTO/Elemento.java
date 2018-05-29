@@ -9,7 +9,7 @@ package prestamoDTO;
  *
  * @author Juan
  */
-class Elemento {
+public class Elemento {
     private int id;
     private String nombre;
     private String valor;

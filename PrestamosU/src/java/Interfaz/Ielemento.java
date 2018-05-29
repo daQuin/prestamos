@@ -5,10 +5,17 @@
  */
 package Interfaz;
 
+
 /**
  *
- * @author DELL
+ * @author Juan
  */
+import java.util.ArrayList;
+import prestamoDTO.Elemento;
+import prestamoDTO.Espacio;
 public interface Ielemento {
-    
+    public boolean registrarelemento(Elemento e);
+    public boolean actualizarelemento(int id, String nombre, String valor, String cantidad, String descripcion, Espacio id_espacio);
+    public Elemento consultar(int id);
+    public ArrayList<Elemento>listarelementos();
 }
