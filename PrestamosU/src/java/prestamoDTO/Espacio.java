@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Espacio {
     private int idSpacios;
-    private String mombre;
+    private String nombre;
     private int capacidad;
     private String dimenciones;
     private String descripcion;
@@ -23,9 +23,9 @@ public class Espacio {
     public Espacio() {
     }
 
-    public Espacio(int idSpacios, String mombre, int capacidad, String dimenciones, String descripcion, String valor_hora, Dependencia id_dependencia) {
+    public Espacio(int idSpacios, String nombre, int capacidad, String dimenciones, String descripcion, String valor_hora, Dependencia id_dependencia) {
         this.idSpacios = idSpacios;
-        this.mombre = mombre;
+        this.nombre = nombre;
         this.capacidad = capacidad;
         this.dimenciones = dimenciones;
         this.descripcion = descripcion;
@@ -42,12 +42,12 @@ public class Espacio {
         this.idSpacios = idSpacios;
     }
 
-    public String getMombre() {
-        return mombre;
+    public String getnombre() {
+        return nombre;
     }
 
-    public void setMombre(String mombre) {
-        this.mombre = mombre;
+    public void setnombre(String mombre) {
+        this.nombre = mombre;
     }
 
     public int getCapacidad() {
