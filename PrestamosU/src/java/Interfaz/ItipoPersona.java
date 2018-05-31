@@ -15,7 +15,7 @@ import prestamoDTO.TipoPersona;
 public interface ItipoPersona {
     public boolean registrartipopersona(TipoPersona tp);
     public boolean eliminartipopersona(String tipoPersona);
-    public boolean eliminarconsultar(String tipoPersona);
+    public TipoPersona consultartipopersona(String tipoPersona);
     public boolean actualizartipopersona(String tipoPersona, String descripcion);
     public ArrayList<TipoPersona>listartipoPersona();
 }

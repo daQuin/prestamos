@@ -5,6 +5,7 @@
  */
 package Interfaz;
 
+import java.util.ArrayList;
 import prestamoDTO.Administrador;
 
 /**
@@ -16,5 +17,6 @@ public interface Iadministrador {
     public boolean actualizaradministrador(String user_name, String correo, String pasword);
     public Administrador consultaradministrador(String user_name);
     public boolean eliminaradministrador(String user_name);
+    public ArrayList<Administrador>listarstradoradmin();
 
 }
