@@ -5,6 +5,10 @@
  */
 package prestamoDTO;
 
+import FACTORY.DaoFactory;
+import Interfaz.Ielemento;
+import java.util.ArrayList;
+
 /**
  *
  * @author Juan
@@ -15,7 +19,11 @@ public class Administrador {
     private String correo;
     private String pasword;
 
+    private FACTORY.DaoFactory factor;
+
+    
     public Administrador() {
+         factor = new DaoFactory();
     }
 
     public Administrador(String user_name, String correo, String pasword) {
@@ -49,6 +57,33 @@ public class Administrador {
     }
     
     
+       public boolean registrarElemento(int id, String nombre, String valor, String cantidad, String descripcion, Espacio id_espacio) {
+           Ielemento a = factor.obtenerConexionElemento(false);
+        Elemento aux = new Elemento(id, nombre, valor, cantidad, descripcion, id_espacio);
+        return a.registrarelemento(aux);
+    }
+    
+        public boolean actualizarElemento(int id, String nombre, String valor, String cantidad, String descripcion, Espacio id_espacio)  {
+        Ielemento a = factor.obtenerConexionElemento(false);
+        return a.actualizarelemento(id, nombre, valor, cantidad, descripcion, id_espacio);
+    }
+
+    public boolean eliminarElemento(int id) {
+        Ielemento a = factor.obtenerConexionElemento(false);
+        return a.eliminarElemento(id);
+    }
+
+    public Elemento consultarElemento(int id) {
+        Ielemento a = factor.obtenerConexionElemento(false);
+        return a.consultar(id);
+    }
+        
+    public ArrayList<Elemento> listarElementos() {
+         Ielemento a = factor.obtenerConexionElemento(false);
+        return a.listarelementos();
+    }
+
+       
     
     
 }
