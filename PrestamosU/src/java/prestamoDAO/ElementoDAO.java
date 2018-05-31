@@ -137,7 +137,7 @@ ArrayList<Elemento> a = null;
                 Espacio e = new Espacio();
                 e.setIdSpacios(aux.getInt(6));
                 elem.setId_espacio(e);
-                
+                 a.add(elem);
             }
             aux.close();
             

@@ -157,7 +157,7 @@ ArrayList<Administrador> a = null;
                 adm.setUser_name(aux.getString(1));
                 adm.setCorreo(aux.getString(2));
                 adm.setPasword(aux.getString(3));
-               
+                a.add(adm);
             }
             aux.close();
             

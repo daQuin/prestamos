@@ -154,6 +154,7 @@ ArrayList<TipoPersona> a = null;
                 TipoPersona tp = new TipoPersona();
                 tp.setTipoPersona(aux.getString(1));
                 tp.setDescripcion(aux.getString(2));
+                 a.add(tp);
                            
             }
             aux.close();

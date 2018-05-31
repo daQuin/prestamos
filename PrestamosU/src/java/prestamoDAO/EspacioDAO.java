@@ -181,6 +181,7 @@ ArrayList<Espacio> a = null;
                 Dependencia d = new Dependencia();
                 d.setId_dependencia(aux.getInt(7));
                 esp.setId_dependencia(d);
+                 a.add(esp);
                 
             }
             aux.close();

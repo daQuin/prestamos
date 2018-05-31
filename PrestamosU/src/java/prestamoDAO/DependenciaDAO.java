@@ -165,7 +165,7 @@ ArrayList<Dependencia> a = null;
                 dep.setCorreo(aux.getString(3));
                 dep.setTelefono(aux.getString(4));
                 dep.setUbicacion(aux.getString(5));
-                
+                 a.add(dep);
             }
             aux.close();
             
