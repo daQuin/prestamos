@@ -182,7 +182,7 @@ public class personaDAO extends MySQLconexion implements Ipersona{
                 per.setTelefono(aux.getString(4));
                 per.setCorreo(aux.getString(5));
                 TipoPersona t = new TipoPersona();
-                t.setTipoPersona(aux.getString(6));
+                t.setTipoPersona(aux.getString(6));     
                 per.setTipopersona(t);
                 per.setPasword(aux.getString(7));
                 a.add(per);
