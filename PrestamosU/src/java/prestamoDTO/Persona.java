@@ -5,6 +5,8 @@
  */
 package prestamoDTO;
 
+import FACTORY.DaoFactory;
+
 /**
  *
  * @author DELL
@@ -17,8 +19,10 @@ public class Persona {
     private String correo;
     private TipoPersona tipopersona;
     private String pasword;
-
+     
+    FACTORY.DaoFactory factorp;
     public Persona() {
+        factorp=new DaoFactory();
     }
 
     public Persona(String cedula, String nombre, String apellido, String telefono, String correo, TipoPersona tipopersona, String pasword) {

@@ -11,12 +11,14 @@ import Interfaz.Ielemento;
 import Interfaz.Iespacio;
 import Interfaz.Ievento;
 import Interfaz.Ipersona;
+import Interfaz.Isolicitud;
 import Interfaz.ItipoPersona;
 import prestamoDAO.AdministradorDAO;
 import prestamoDAO.DependenciaDAO;
 import prestamoDAO.ElementoDAO;
 import prestamoDAO.EspacioDAO;
 import prestamoDAO.EventoDAO;
+import prestamoDAO.SolicitudDAO;
 import prestamoDAO.TipoPersonaDao;
 import prestamoDAO.personaDAO;
 
@@ -48,6 +50,10 @@ public class DaoFactory {
     public Iadministrador obtenerConexionAdmin(boolean keepConnection) {
 
          return new AdministradorDAO(keepConnection);
+    }
+     public Isolicitud obtenerConexionSolicitud(boolean keepConnection) {
+
+         return new SolicitudDAO(keepConnection);
     }
  
 }

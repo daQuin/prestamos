@@ -14,7 +14,7 @@ import prestamoDTO.Solicitud;
  * @author Juan
  */
 public interface Ievento {
-      public boolean registrarevento(Evento e);
+    public boolean registrarevento(Evento e);
     public boolean actualizarevento(int id_evento, String nombre, String tipoEvento, String descripcion, Solicitud solicitud_alquiler);
     public Evento consultarevento(int id_evento);
     public boolean eliminarevento(int id_evento);

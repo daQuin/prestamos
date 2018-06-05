@@ -21,9 +21,10 @@ import prestamoDTO.Espacio;
  * @author DELL
  */
 public class EspacioDAO extends MySQLconexion implements Iespacio{
-
+DependenciaDAO dependenciadao; 
   public EspacioDAO(boolean keepConnection) {
         super(keepConnection);
+        dependenciadao = new DependenciaDAO(keepConnection);
     }
 
     @Override
@@ -81,9 +82,7 @@ public class EspacioDAO extends MySQLconexion implements Iespacio{
                 aux.setDescripcion(a.getString(5));
                 aux.setValor_hora(a.getString(6));
                 Dependencia d = new Dependencia();
-                
-                d.setId_dependencia(a.getInt(7));
-                
+                d= dependenciadao.consultardependencia(a.getInt(7));
                 aux.setId_dependencia(d);
                 
                 
