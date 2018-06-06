@@ -10,6 +10,7 @@ import Interfaz.Idependencia;
 import Interfaz.Ielemento;
 import Interfaz.Iespacio;
 import Interfaz.Ievento;
+import Interfaz.Ipersona;
 import Interfaz.Isolicitud;
 import Interfaz.ItipoPersona;
 import java.util.ArrayList;
@@ -207,6 +208,16 @@ public class Administrador {
         Isolicitud a =factor.obtenerConexionSolicitud(false);
         ArrayList<Solicitud>s=a.listarsolicitud();
         return s;
-    }       
+    } 
+    
+    public Persona consultarPersona(String doc){
+        Ipersona a=factor.obtenerConexionPersona(false);
+        return a.consultarPersona(doc);
+    }
+    
+    public ArrayList<Persona> listarPersona(){
+        Ipersona a=factor.obtenerConexionPersona(false);
+        return a.listarPersona();
+    }
     
 }

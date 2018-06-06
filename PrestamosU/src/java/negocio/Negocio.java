@@ -24,9 +24,11 @@ import prestamoDTO.TipoPersona;
 public class Negocio implements Inegocio {
 
     private Administrador admin;
+    private Persona per;
 
     public Negocio() {
         admin = new Administrador();
+        per=new Persona();
     }
 
     @Override
@@ -124,7 +126,13 @@ public class Negocio implements Inegocio {
 
     @Override
     public Espacio consultarespacio(int id_espacios) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       try {
+            Espacio rta = admin.consultarEspacio(id_espacios);
+            return rta;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;  
     }
 
     @Override
@@ -154,7 +162,7 @@ public class Negocio implements Inegocio {
 
     @Override
     public Administrador consultaradministrador(String user_name) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -169,7 +177,19 @@ public class Negocio implements Inegocio {
 
     @Override
     public boolean registrardependencia(Dependencia d) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            boolean rta = admin.registrardependencia(d.getId_dependencia(), d.getNombre(), d.getCorreo(), d.getTelefono(), d.getUbicacion());
+            if (rta) {
+                System.out.println("Dependencia Registrado");
+                return rta;
+            } else {
+                System.out.println("Dependencia no Registrado");
+            }
+
+        } catch (Exception ex) {
+
+        }
+        return false;   
     }
 
     @Override
@@ -179,7 +199,13 @@ public class Negocio implements Inegocio {
 
     @Override
     public Dependencia consultardependencia(int id_dependencia) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            Dependencia rta = admin.consultardependencia(id_dependencia);
+            return rta;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;  
     }
 
     @Override
@@ -194,7 +220,19 @@ public class Negocio implements Inegocio {
 
     @Override
     public boolean registrarevento(Evento e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+             try {
+            boolean rta = admin.registrarEvento(e.getId_evento(), e.getNombre(), e.getTipoEvento(), e.getDescripcion(), e.getSolicitud_alquiler());
+            if (rta) {
+                System.out.println("Evento Registrado");
+                return rta;
+            } else {
+                System.out.println("Evento no Registrado");
+            }
+
+        } catch (Exception ex) {
+
+        }
+        return false;
     }
 
     @Override
@@ -204,7 +242,13 @@ public class Negocio implements Inegocio {
 
     @Override
     public Evento consultarevento(int id_evento) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         try {
+            Evento rta = admin.consultarEvento(id_evento);
+            return rta;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;  
     }
 
     @Override
@@ -219,7 +263,19 @@ public class Negocio implements Inegocio {
 
     @Override
     public boolean registrarPersona(Persona p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            boolean rta = per.registrarPersona(p.getCedula(), p.getNombre(), p.getApellido(), p.getTelefono(), p.getCorreo(),p.getTipopersona(),p.getPasword());
+            if (rta) {
+                System.out.println("Persona Registrado");
+                return rta;
+            } else {
+                System.out.println("Persona no Registrado");
+            }
+
+        } catch (Exception ex) {
+
+        }
+        return false;
     }
 
     @Override
@@ -234,7 +290,13 @@ public class Negocio implements Inegocio {
 
     @Override
     public Persona consultarPersona(String c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            Persona rta = admin.consultarPersona(c);
+            return rta;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;  
     }
 
     @Override
@@ -244,7 +306,19 @@ public class Negocio implements Inegocio {
 
     @Override
     public boolean registrarsolicitud(Solicitud s) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            boolean rta = per.solicitarEspacio(s.getNombre(), s.getDescripcion(), s.getFecha(), s.getHora(), s.getDuracion(),s.getEstado(),s.getEspacio(),s.getCedula_Persona(),s.getId_solicitud());
+            if (rta) {
+                System.out.println("Dependencia Registrado");
+                return rta;
+            } else {
+                System.out.println("Dependencia no Registrado");
+            }
+
+        } catch (Exception ex) {
+
+        }
+        return false;
     }
 
     @Override
@@ -254,7 +328,13 @@ public class Negocio implements Inegocio {
 
     @Override
     public Solicitud consultarsolicitud(int id_solicitud) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       try {
+            Solicitud rta = admin.consultarSolicitud(id_solicitud);
+            return rta;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;  
     }
 
     @Override
@@ -269,7 +349,19 @@ public class Negocio implements Inegocio {
 
     @Override
     public boolean registrartipopersona(TipoPersona tp) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            boolean rta = admin.registrartipoPersona(tp.getTipoPersona(), tp.getDescripcion());
+            if (rta) {
+                System.out.println("tip persona Registrado");
+                return rta;
+            } else {
+                System.out.println("tipo persona no Registrado");
+            }
+
+        } catch (Exception ex) {
+
+        }
+        return false;
     }
 
     @Override
@@ -279,7 +371,13 @@ public class Negocio implements Inegocio {
 
     @Override
     public TipoPersona consultartipopersona(String tipoPersona) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       try {
+            TipoPersona rta = admin.consultartipoPersona(tipoPersona);
+            return rta;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;  
     }
 
     @Override

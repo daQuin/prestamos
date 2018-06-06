@@ -6,6 +6,10 @@
 package prestamoDTO;
 
 import FACTORY.DaoFactory;
+import Interfaz.Iespacio;
+import Interfaz.Ipersona;
+import Interfaz.Isolicitud;
+import java.util.Date;
 
 /**
  *
@@ -91,5 +95,28 @@ public class Persona {
         this.pasword = pasword;
     }
     
+    public boolean registrarPersona(String cedula, String nombre, String apellido, String telefono, String correo, TipoPersona tipopersona, String pasword){
+        Ipersona a=factorp.obtenerConexionPersona(false);
+        Persona p=new Persona(cedula, nombre, apellido, telefono, correo, tipopersona, pasword);
+        return a.registrarPersona(p);
+    }
+    public boolean actualizarPersona(String cedula, String nombre, String apellido, String telefono, String correo, TipoPersona tipopersona, String pasword){
+        Ipersona a=factorp.obtenerConexionPersona(false);
+        return a.actualizarPersona(cedula, nombre, apellido, telefono, correo, tipopersona, pasword);
+    }
     
+    public boolean solicitarEspacio(String nombre, String descripcion, Date fecha, String hora, String duracion, String estado, Espacio espacio, Persona cedula_Persona, int id_solicitud){
+        Isolicitud a=factorp.obtenerConexionSolicitud(false);
+        Solicitud s=new Solicitud(nombre, descripcion, fecha, hora, duracion, estado, espacio, cedula_Persona, id_solicitud);
+        return a.registrarsolicitud(s);
+    }
+    
+    public boolean actualizarSolicitud(String nombre, String descripcion, Date fecha, String hora, String duracion, String estado, Espacio espacio, Persona cedula_Persona, int id_solicitud){
+        Isolicitud a=factorp.obtenerConexionSolicitud(false);
+        return a.actualizarsolicitud(nombre, descripcion, fecha, hora, duracion, estado, espacio, cedula_Persona, id_solicitud);
+    }
+    public boolean eliminarSolicitud(int id){
+        Isolicitud a=factorp.obtenerConexionSolicitud(false);
+        return a.eliminarsolicitud(id);
+    }
 }
