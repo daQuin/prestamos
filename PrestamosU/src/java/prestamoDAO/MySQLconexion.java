@@ -11,7 +11,7 @@ import java.sql.DriverManager;
 public class MySQLconexion {
      private Connection conn;
     private String DRIVER = "org.gjt.mm.mysql.Driver";
-    private String DBURL = "jdbc:mysql://localhost/mydb";
+    private String DBURL = "jdbc:mysql://localhost/gestion_de_espacios_universitarios";
     private String USER = "root";
     private String PASS = "";
 //     
