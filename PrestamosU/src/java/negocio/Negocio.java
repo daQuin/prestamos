@@ -142,7 +142,18 @@ public class Negocio implements Inegocio {
 
     @Override
     public boolean actualizarespacio(int idSpacios, String mombre, int capacidad, String dimenciones, String descripcion, String valor_hora, Dependencia id_dependencia) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ try {
+            boolean rta = admin.actualizarEspacio(idSpacios, mombre, capacidad, dimenciones, descripcion, valor_hora, id_dependencia);
+            if (rta) {
+                System.out.println("Elemento actualizado");
+                return rta;
+            } else {
+                System.out.println("Elemento no actualizado");
+            }
+
+        } catch (Exception e) {
+        }
+        return false;
     }
 
     @Override
@@ -194,7 +205,18 @@ public class Negocio implements Inegocio {
 
     @Override
     public boolean actualizardependencia(int id_dependencia, String nombre, String correo, String telefono, String Ubicacion) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ try {
+            boolean rta = admin.actualizardependencia(id_dependencia, nombre, correo, telefono, Ubicacion);
+            if (rta) {
+                System.out.println("dependencia actualizado");
+                return rta;
+            } else {
+                System.out.println("dependencia no actualizado");
+            }
+
+        } catch (Exception e) {
+        }
+        return false;
     }
 
     @Override
@@ -237,7 +259,18 @@ public class Negocio implements Inegocio {
 
     @Override
     public boolean actualizarevento(int id_evento, String nombre, String tipoEvento, String descripcion, Solicitud solicitud_alquiler) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ try {
+            boolean rta = admin.actualizarEvento(id_evento, nombre, tipoEvento, descripcion, solicitud_alquiler);
+            if (rta) {
+                System.out.println("evento actualizado");
+                return rta;
+            } else {
+                System.out.println("evento no actualizado");
+            }
+
+        } catch (Exception e) {
+        }
+        return false;
     }
 
     @Override
