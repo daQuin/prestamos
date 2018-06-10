@@ -20,9 +20,10 @@ import prestamoDTO.TipoPersona;
  * @author DELL
  */
 public class personaDAO extends MySQLconexion implements Ipersona{
-
+   TipoPersonaDao tp;
      public personaDAO(boolean keepConnection) {
         super(keepConnection);
+        tp=new TipoPersonaDao(keepConnection);
     }
     
     
@@ -145,11 +146,8 @@ public class personaDAO extends MySQLconexion implements Ipersona{
                 aux.setTelefono(a.getString(4));
                 aux.setCorreo(a.getString(5));
                 TipoPersona t = new TipoPersona();
-                
-                t.setTipoPersona(a.getString(6));
-                
+                t=tp.consultartipopersona(a.getString(6));
                 aux.setTipopersona(t);
-                
                 aux.setPasword(a.getString(7));
             }
             
@@ -182,8 +180,7 @@ public class personaDAO extends MySQLconexion implements Ipersona{
                 per.setTelefono(aux.getString(4));
                 per.setCorreo(aux.getString(5));
                 TipoPersona t = new TipoPersona();
-                t.setTipoPersona(aux.getString(6));     
-                per.setTipopersona(t);
+                t=tp.consultartipopersona(aux.getString(6));
                 per.setPasword(aux.getString(7));
                 a.add(per);
             }

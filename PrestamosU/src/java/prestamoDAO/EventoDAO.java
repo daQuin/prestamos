@@ -22,9 +22,11 @@ import prestamoDTO.TipoPersona;
  * @author estudiante
  */
 public class EventoDAO extends MySQLconexion implements Ievento {
+    SolicitudDAO sol;
 
     public EventoDAO(boolean keepConnection) {
         super(keepConnection);
+        sol=new  SolicitudDAO(keepConnection);
     }
 
     @Override
@@ -39,6 +41,7 @@ public class EventoDAO extends MySQLconexion implements Ievento {
             stmt.setString(2, e.getNombre());
             stmt.setString(3, e.getTipoEvento());
             stmt.setString(4, e.getDescripcion());
+            
             stmt.setInt(5, e.getSolicitud_alquiler().getId_solicitud());
         
             int aux = stmt.executeUpdate();
@@ -102,7 +105,7 @@ public class EventoDAO extends MySQLconexion implements Ievento {
                 aux.setTipoEvento(a.getString(3));
                 aux.setDescripcion(a.getString(4));
                 Solicitud s = new Solicitud();
-                s.setId_solicitud(a.getInt(5));
+                s=sol.consultarsolicitud(a.getInt(5));
                 aux.setSolicitud_alquiler(s);
 
             }
@@ -124,7 +127,6 @@ public class EventoDAO extends MySQLconexion implements Ievento {
             stmt = super.getConn().prepareStatement("select idEvento from evento");
             ResultSet aux = stmt.executeQuery();
             while (aux.next()) {
-                Persona p = new Persona();
                 Evento e = new Evento();
                 e.setId_evento(aux.getInt(1));
                 
@@ -173,7 +175,7 @@ public class EventoDAO extends MySQLconexion implements Ievento {
                 eve.setTipoEvento(aux.getString(3));
                 eve.setDescripcion(aux.getString(4));
                 Solicitud s = new Solicitud();
-                s.setId_solicitud(aux.getInt(5));
+                s=sol.consultarsolicitud(aux.getInt(5));
                 eve.setSolicitud_alquiler(s);
                 a.add(eve);
                

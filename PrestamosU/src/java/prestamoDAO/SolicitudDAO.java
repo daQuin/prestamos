@@ -25,9 +25,12 @@ import prestamoDTO.TipoPersona;
  * @author estudiante
  */
 public class SolicitudDAO extends MySQLconexion implements Isolicitud {
-
+EspacioDAO esp;
+personaDAO per;
     public SolicitudDAO(boolean keepConnection) {
         super(keepConnection);
+        per=new personaDAO(keepConnection);
+        esp=new EspacioDAO(keepConnection);
     }
 
     @Override
@@ -116,10 +119,10 @@ public class SolicitudDAO extends MySQLconexion implements Isolicitud {
                 aux.setDuracion(a.getString(5));
                 aux.setEstado(a.getString(6));
                 Espacio e = new Espacio();
-                e.setIdSpacios(a.getInt(7));
+                e=esp.consultarespacio(a.getInt(7));
                 aux.setEspacio(e);
                 Persona p = new Persona();
-                p.setCedula(a.getString(8));
+                p=per.consultarPersona(a.getString(9));
                 aux.setCedula_Persona(p);
                 aux.setId_solicitud(a.getInt(9));
  
@@ -192,11 +195,11 @@ public class SolicitudDAO extends MySQLconexion implements Isolicitud {
                 sol.setDuracion(aux.getString(5));
                 sol.setEstado(aux.getString(6));
                 Espacio e = new Espacio();
-                e.setIdSpacios(aux.getInt(7));
+                e=esp.consultarespacio(aux.getInt(7));
                 sol.setEspacio(e);
-                Persona c = new Persona();
-                c.setCedula(aux.getString(8));
-                sol.setCedula_Persona(c);
+                Persona p = new Persona();
+                p=per.consultarPersona(aux.getString(8));
+                sol.setCedula_Persona(p);
                 sol.setId_solicitud(aux.getInt(9));
                 a.add(sol);
                

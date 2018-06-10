@@ -215,6 +215,11 @@ public class Administrador {
         return a.consultarPersona(doc);
     }
     
+     public boolean eliminarpersona(String id_persona) {
+        Ipersona a = factor.obtenerConexionPersona(false);
+        return a.eliminarPersona(id_persona);
+    }
+    
     public ArrayList<Persona> listarPersona(){
         Ipersona a=factor.obtenerConexionPersona(false);
         return a.listarPersona();

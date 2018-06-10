@@ -137,7 +137,20 @@ public class Negocio implements Inegocio {
 
     @Override
     public boolean eliminarespacio(int id_espacios) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ try {
+            boolean rta = admin.eliminarEspacio(id_espacios);
+            if (rta == true) {
+                System.out.println("Espacio #" + id_espacios+ "  Eliminado");
+                return rta;
+            } else {
+                System.out.println("Elemento no eliminado");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return false;
     }
 
     @Override
@@ -158,7 +171,13 @@ public class Negocio implements Inegocio {
 
     @Override
     public ArrayList<Espacio> listarespacios() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     ArrayList<Espacio> a = null;
+        try {
+            a = admin.listarEspacio();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return a;  
     }
 
     @Override
@@ -232,12 +251,31 @@ public class Negocio implements Inegocio {
 
     @Override
     public boolean eliminardependencia(int id_dependencia) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    try {
+            boolean rta = admin.eliminardependencia(id_dependencia);
+            if (rta == true) {
+                System.out.println("Espacio #" + id_dependencia+ "  Eliminado");
+                return rta;
+            } else {
+                System.out.println("Elemento no eliminado");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return false;
     }
 
     @Override
     public ArrayList<Dependencia> listardependencia() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ArrayList<Dependencia> a = null;
+        try {
+            a = admin.listardependencia();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return a;  
     }
 
     @Override
@@ -259,7 +297,7 @@ public class Negocio implements Inegocio {
 
     @Override
     public boolean actualizarevento(int id_evento, String nombre, String tipoEvento, String descripcion, Solicitud solicitud_alquiler) {
- try {
+         try {
             boolean rta = admin.actualizarEvento(id_evento, nombre, tipoEvento, descripcion, solicitud_alquiler);
             if (rta) {
                 System.out.println("evento actualizado");
@@ -286,12 +324,31 @@ public class Negocio implements Inegocio {
 
     @Override
     public boolean eliminarevento(int id_evento) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+try {
+            boolean rta = admin.eliminarEvento(id_evento);
+            if (rta == true) {
+                System.out.println("Evento #" + id_evento+ "  Eliminado");
+                return rta;
+            } else {
+                System.out.println("Evento no eliminado");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return false;
     }
 
     @Override
     public ArrayList<Evento> listarevento() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      ArrayList<Evento> a = null;
+        try {
+            a = admin.listarEvento();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return a;
     }
 
     @Override
@@ -313,12 +370,36 @@ public class Negocio implements Inegocio {
 
     @Override
     public boolean eliminarPersona(String c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    try {
+            boolean rta = admin.eliminarpersona(c);
+            if (rta == true) {
+                System.out.println("persona #" + c+ "  Eliminado");
+                return rta;
+            } else {
+                System.out.println("persona no eliminado");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return false;
     }
 
     @Override
     public boolean actualizarPersona(String cedula, String nombre, String apellido, String telefono, String correo, TipoPersona tipopersona, String pasword) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+try {
+            boolean rta = per.actualizarPersona(cedula, nombre, apellido, telefono, correo, tipopersona, pasword);
+            if (rta) {
+                System.out.println("persona actualizado");
+                return rta;
+            } else {
+                System.out.println("persona no actualizado");
+            }
+
+        } catch (Exception e) {
+        }
+        return false;
     }
 
     @Override
@@ -334,7 +415,13 @@ public class Negocio implements Inegocio {
 
     @Override
     public ArrayList<Persona> listarPersona() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      ArrayList<Persona> a = null;
+        try {
+            a = admin.listarPersona();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return a;
     }
 
     @Override
@@ -356,7 +443,18 @@ public class Negocio implements Inegocio {
 
     @Override
     public boolean actualizarsolicitud(String nombre, String descripcion, Date fecha, String hora, String duracion, String estado, Espacio espacio, Persona cedula_Persona, int id_solicitud) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+try {
+            boolean rta = admin.actualizarSolicitud(nombre, descripcion, fecha, hora, duracion, estado, espacio, cedula_Persona, id_solicitud);
+            if (rta) {
+                System.out.println("evento actualizado");
+                return rta;
+            } else {
+                System.out.println("evento no actualizado");
+            }
+
+        } catch (Exception e) {
+        }
+        return false;
     }
 
     @Override
@@ -372,12 +470,31 @@ public class Negocio implements Inegocio {
 
     @Override
     public boolean eliminarsolicitud(int id_solicitud) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ try {
+            boolean rta = admin.eliminarSolicitud(id_solicitud);
+            if (rta == true) {
+                System.out.println("solicitud #" + id_solicitud+ "  Eliminado");
+                return rta;
+            } else {
+                System.out.println("solicitud no eliminado");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return false;
     }
 
     @Override
     public ArrayList<Solicitud> listarsolicitud() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ArrayList<Solicitud> a = null;
+        try {
+            a = admin.listarSolicitud();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return a;
     }
 
     @Override
@@ -399,7 +516,20 @@ public class Negocio implements Inegocio {
 
     @Override
     public boolean eliminartipopersona(String tipoPersona) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+  try {
+            boolean rta = admin.eliminartipoPersona(tipoPersona);
+            if (rta == true) {
+                System.out.println("tipo persona #" + tipoPersona+ "  Eliminado");
+                return rta;
+            } else {
+                System.out.println("tipo persona no eliminado");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return false;
     }
 
     @Override
@@ -415,11 +545,27 @@ public class Negocio implements Inegocio {
 
     @Override
     public boolean actualizartipopersona(String tipoPersona, String descripcion) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+try {
+            boolean rta = admin.actualizartipoPersona(tipoPersona, descripcion);
+            if (rta) {
+                System.out.println("evento actualizado");
+                return rta;
+            } else {
+                System.out.println("evento no actualizado");
+            }
+
+        } catch (Exception e) {
+        }
+        return false;    }
 
     @Override
     public ArrayList<TipoPersona> listartipoPersona() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    ArrayList<TipoPersona> a = null;
+        try {
+            a = admin.listartipoPersona();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return a;
     }
 }

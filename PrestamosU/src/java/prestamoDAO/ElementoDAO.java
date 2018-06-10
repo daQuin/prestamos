@@ -21,9 +21,11 @@ import prestamoDTO.Espacio;
  * @author Juan
  */
 public class ElementoDAO extends MySQLconexion implements Ielemento{
+    EspacioDAO ed; 
 
     public ElementoDAO(boolean keepConnection) {
         super(keepConnection);
+        ed=new EspacioDAO(keepConnection);
     }
 
     @Override
@@ -89,6 +91,7 @@ boolean exito = false;
 
     @Override
     public Elemento consultar(int id) {
+        
      Elemento aux = null;
         PreparedStatement stmt = null;
         try {
@@ -102,8 +105,7 @@ boolean exito = false;
                 aux.setValor(a.getString(3));
                 aux.setCantidad(a.getString(4));
                 aux.setDescripcion(a.getString(5));
-                Espacio e = new Espacio();
-                e.setIdSpacios(a.getInt(6));
+                Espacio e = ed.consultarespacio(id);
                 aux.setId_espacio(e); 
             }
             
@@ -134,8 +136,7 @@ ArrayList<Elemento> a = null;
                 elem.setValor(aux.getString(3));
                 elem.setCantidad(aux.getString(4));
                 elem.setDescripcion(aux.getString(5));
-                Espacio e = new Espacio();
-                e.setIdSpacios(aux.getInt(6));
+                Espacio e = ed.consultarespacio(aux.getInt(6));
                 elem.setId_espacio(e);
                  a.add(elem);
             }
