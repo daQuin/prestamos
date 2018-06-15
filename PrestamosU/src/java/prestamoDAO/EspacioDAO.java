@@ -33,8 +33,8 @@ DependenciaDAO dependenciadao;
         try {
             PreparedStatement stmt = null;
             stmt = super.getConn().prepareStatement("insert into espacios (idespacios, nombre, capacidad,"
-                    + "dimenciones, descripcion, valor/hora, Dependencia_id_dependencia"
-                    + ") values (?,?,?,?,?,?,?)");
+                    + "dimenciones, descripcion, valor, Elementos_idElementos, Dependencia_id_dependencia"
+                    + ") values (?,?,?,?,?,?,?,?)");
             stmt.setInt(1, e.getIdSpacios());
             stmt.setString(2, e.getnombre());
             stmt.setInt(3, e.getCapacidad());
@@ -42,6 +42,7 @@ DependenciaDAO dependenciadao;
             stmt.setString(5, e.getDescripcion());
             stmt.setString(6, e.getValor_hora());
             stmt.setInt(7, e.getId_dependencia().getId_dependencia());
+            stmt.setInt(8, e.getId_dependencia().getId_dependencia());
             
             int aux = stmt.executeUpdate();
             if (aux > 0) {
@@ -102,7 +103,7 @@ DependenciaDAO dependenciadao;
 PreparedStatement stmt = null;
         boolean exito = false;
         try {
-            stmt = super.getConn().prepareStatement("select idespacios from espaios");
+            stmt = super.getConn().prepareStatement("select idespacios from espacios");
             ResultSet aux = stmt.executeQuery();
             while (aux.next()) {
                 Espacio e = new Espacio();
@@ -138,7 +139,7 @@ PreparedStatement stmt = null;
         PreparedStatement smtm = null;
         try {
             smtm = super.getConn().prepareStatement("update espacios set nombre=?,capacidad=?,"
-                    + "dimenciones=?, descripcion=?, valor/hora=?, Dependencia_id_dependencia=? where idespacios='" + idSpacios + "'");
+                    + "dimenciones=?, descripcion=?, valor=?, Dependencia_id_dependencia=? where idespacios='" + idSpacios + "'");
                     
             smtm.setString(1, nombre);
             smtm.setInt(2, capacidad);

@@ -22,7 +22,7 @@ public class prueba {
         TipoPersona tp = new TipoPersona();
         tp = n.consultartipopersona("1");
         
-        Persona p = new Persona("1111", "Daniel", "Quintero", "123123", "1sasa", tp, "asdsad");
+        Persona p = new Persona("1112", "Adonai", "Quintero", "123123", "1sasa", tp, "asdsad");
         
         n.registrarPersona(p);
         

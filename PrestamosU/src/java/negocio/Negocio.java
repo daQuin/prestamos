@@ -109,6 +109,7 @@ public class Negocio implements Inegocio {
 
     @Override
     public boolean registrarespacio(Espacio e) {
+        System.out.println("ENTROO A REGSTRAR ESPACIO");
   try {
             boolean rta = admin.registrarEspacio(e.getIdSpacios(), e.getnombre(), e.getCapacidad(), e.getDimenciones(), e.getDescripcion(),e.getValor_hora(), e.getId_dependencia());
             if (rta) {
@@ -137,20 +138,21 @@ public class Negocio implements Inegocio {
 
     @Override
     public boolean eliminarespacio(int id_espacios) {
- try {
+
+    try {
             boolean rta = admin.eliminarEspacio(id_espacios);
             if (rta == true) {
-                System.out.println("Espacio #" + id_espacios+ "  Eliminado");
+               
                 return rta;
             } else {
-                System.out.println("Elemento no eliminado");
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return false;
+        return false;     
+
     }
 
     @Override
@@ -171,13 +173,15 @@ public class Negocio implements Inegocio {
 
     @Override
     public ArrayList<Espacio> listarespacios() {
-     ArrayList<Espacio> a = null;
+
+        ArrayList<Espacio> a = null;
         try {
             a = admin.listarEspacio();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return a;  
+        return a; 
+
     }
 
     @Override
@@ -269,13 +273,15 @@ public class Negocio implements Inegocio {
 
     @Override
     public ArrayList<Dependencia> listardependencia() {
-        ArrayList<Dependencia> a = null;
+
+  ArrayList<Dependencia> a = null;
         try {
             a = admin.listardependencia();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return a;  
+        return a; 
+
     }
 
     @Override

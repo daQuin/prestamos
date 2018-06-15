@@ -155,7 +155,7 @@ ArrayList<Dependencia> a = null;
         
         try {
             a = new ArrayList<Dependencia>();
-            stmt = super.getConn().prepareStatement("select * from elementos");
+            stmt = super.getConn().prepareStatement("select * from dependencia");
             
             ResultSet aux = stmt.executeQuery();
             while (aux.next()) {

@@ -136,7 +136,10 @@ ArrayList<Elemento> a = null;
                 elem.setValor(aux.getString(3));
                 elem.setCantidad(aux.getString(4));
                 elem.setDescripcion(aux.getString(5));
-                Espacio e = ed.consultarespacio(aux.getInt(6));
+
+                Espacio e = new Espacio();
+                //e.setIdSpacios(aux.getInt(6));
+
                 elem.setId_espacio(e);
                  a.add(elem);
             }
