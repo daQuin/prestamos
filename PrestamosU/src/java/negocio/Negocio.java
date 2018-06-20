@@ -196,7 +196,13 @@ public class Negocio implements Inegocio {
 
     @Override
     public Administrador consultaradministrador(String user_name) {
-     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     try {
+            Administrador rta = admin.consultarAdministrador(user_name);
+            return rta;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;  
     }
 
     @Override

@@ -233,7 +233,7 @@
                 <li><a title="" href="homeAdmin.jsp">Espacios</a></li>
                 <li><a title="" href="">Elementos</a></li>
                 <li><a title="" href="">Eventos</a></li>
-                <li><a title="" href="">Dependencia</a></li>
+                <li><a title="" href="dependencias.jsp">Dependencia</a></li>
              </ul>
 
         </div>
@@ -261,7 +261,6 @@
                         <input type="text" class="form-control" id="dimencion" placeholder="Dimenciones" name="dimencion">
                     </div>
                     <div class="form-group">
-                        <label for="clave">Dependencia</label>
                         <select style="height: 35px;" class="form-control" id="dependencia" name="dependencia">
                             <%
                                 for (Dependencia dep : e.listarDependencias()) {

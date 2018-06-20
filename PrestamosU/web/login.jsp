@@ -1,9 +1,13 @@
-<!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="es"> <!--<![endif]-->
-    <head>
-        <title>UFPS - Cúcuta</title>
+<%-- 
+    Document   : login
+    Created on : 14/06/2018, 06:35:23 PM
+    Author     : Juan
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html >
+ <head>
+        <title>UFPS - CÃºcuta</title>
 
         <!-- Meta -->
         
@@ -14,6 +18,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+			<!-- vinculo a bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Temas-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- se vincula al hoja de estilo para definir el aspecto del formulario de login-->  
+<link rel="stylesheet" type="text/css" href="estilo.css">
         
          <meta name="description" content="">
         <meta name="author" content="">
@@ -115,16 +126,16 @@
                             <li><a href="/universidad/perfiles/estudiantes/953"><i class="fa fa-user"></i> Estudiantes</a></li>
                             <li><a href="/universidad/perfiles/egresados/954"><i class="fa fa-graduation-cap"></i> Egresados</a></li>
                             <li><a href="#"><i class="fa fa-user-secret"></i> Docentes</a></li>
-                            <li><a href="inicio.jsp"><i class="fa fa-briefcase"></i> Administrador</a></li>
+                             <li><a href="#"><i class="fa fa-briefcase"></i> Administrativos</a></li>
 
 
 
                             <li class="cd-log_reg hidden-sm hidden-md hidden-lg"><strong><a class="cd-signup" href="javascript:void(0);">Lenguaje</a></strong>
                             <ul class="topbar-dropdown">
-                                    <li><a href="#">Inglés</a></li>
-                                    <li><a href="#">Español</a></li>
+                                    <li><a href="#">InglÃ©s</a></li>
+                                    <li><a href="#">EspaÃ±ol</a></li>
                                 </ul></li>
-                                 <li class="cd-log_reg hidden-sm hidden-md hidden-lg"><strong><a class="cd-signin" href="javascript:void(0);"><i class="fa fa-reply"></i> Versión Anterior</a></strong></li>
+                                 <li class="cd-log_reg hidden-sm hidden-md hidden-lg"><strong><a class="cd-signin" href="javascript:void(0);"><i class="fa fa-reply"></i> VersiÃ³n Anterior</a></strong></li>
                         </ul>
                     </div>
                     <div class="col-sm-5 col-xs-5 clearfix">
@@ -139,9 +150,7 @@
 
                              </li>
 
-                             <li class="cd-log_reg home">
-                                 <a href="registro.jsp"><i class="fa fa-user-plus" aria-hidden="true"></i> Registrarse</a>
-                            </li>
+                             
                         </ul>
                     </div>
                 </div><!--/end row-->
@@ -181,7 +190,7 @@
 
     <div class="menu-responsive">
         <!-- Logo -->
-        <a class="logo logo-responsive" href="index.html">
+        <a class="logo logo-responsive" href="index.jsp">
             <img src="img/horizontal_logo_pequeno.png" alt="Logo">
         </a>  
         <!-- End Logo -->
@@ -210,96 +219,54 @@
   <!-- Brand -->
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 
-  <a  class= "navbar-brand "  href="#">Inicio</a>
+            <a  class= "navbar-brand "  href="index.jsp">Inicio</a>
 
   <!-- Links -->
-  <ul class="navbar-nav">
-    <li class="nav-item">
-        <a class="nav-link" href="login.jsp"><strong><big>Ingresar Como Interno</big></strong></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#"><strong><big>Ingresar Como Externo</big></strong></a>
-    </li>
-    
-      
- 
-  </ul>
-      
+  
 </nav>
          
 <br>
   
 <div class="container">
-  <p>holaaa</p>
-  
+ 
+  <li class="cd-log_reg home">
+                               <center> <a href="logine.html"><i class="" aria-hidden="true"></i><h1>INICIAR SESION</h1></a></center>
+      <center> <a href="logine.html"><i class="" aria-hidden="true"></i><h4>PERSONA INTERNA</h4></a></center>
+                            </li>
 </div>
       
       
-      <ul class="pgwSlider">
-
-            <li class="nav-item"><a class="nav-link" href="index2.html"><img src="img/ecb.jpg" width="1000" height="1000"><span style="font-family: inherit; font-weight: bold;">Auditorio Eustorgio Colmenares</span></a>
-        </li>
-                <li><a href="http://localhost:10003/unoticia/innovacion-creatividad-e-investigacion-la-propuesta-de-la-ufps-en-el-seminario-internacional-de-arquitectura"><img src="img/img10.jpg" width="200" height="200"><span style="font-family: inherit; font-weight: bold;">Auditorio Acero Jordan</span></a>
-        </li>
-                <li><a href="http://localhost:10003/unoticia/planton-por-la-paz-muestra-del-compromiso-de-la-ufps-por-la-construccion-de-una-nueva-colombia"><img src="img/img4.jpg" width="200" height="200"><span style="font-family: inherit; font-weight: bold;">Coliseo Cubierto UFPS</span></a>
-        </li>
-                <li><a href="http://localhost:10003/unoticia/festival-ufps-territorio-de-paz-escenario-de-pedagogia-analisis-reflexion-y-muestras-artisticas"><img src="img/img8.jpg" width="200" height="200"><span style="font-family: inherit; font-weight: bold;">Cancha Futbol UFPS</span></a>
-        </li>
-         <li><a href="http://localhost:10003/unoticia/festival-ufps-territorio-de-paz-escenario-de-pedagogia-analisis-reflexion-y-muestras-artisticas"><img src="img/img10.jpg" width="200" height="200"><span style="font-family: inherit; font-weight: bold;">Cancha MicroFutbol UFPS</span></a>
-        </li>
-        
-
-</ul>
-   
-      
-        <hr>
-        <h1><center>Eventos</center></h1>
-        <li class="cd-log_reg home">
-                                <a href="http://www.ufps.edu.co/ufps/index.php"> <i class="far fa-calendar-alt"></i> Eventos</a>
-                            </li>
-       
-      <section id="one" class="wrapper style1">
-				<div class="inner">
-					<article class="feature center">
-
-<a href="index2.html" class="image" ><img width="200" height="200" src="img/img10.jpg" alt="" /></a>
-                        <div class="content">
-							<h2></h2>
-							<p></p>
-							<ul class="actions">
-								<li>
-									<a href="#" class="button alt">Mas</a>
-								</li>
-							</ul>
-						</div>
-					</article>
-     
-     
-					<article class="feature right">
- 
-                              <h2>Auditorio Eustorgio Colmenares</h2>
-                        
-                        <img src="img/ecb.jpg"  alt="eustorgio" width="200" height="200" >
-                    						<div class="content">
-							
-							<p></p>
-							<ul class="actions">
-								<li>
-									<a href="#" class="button alt">Mas</a>
-								</li>
-							</ul>
-						</div>
-					</article>
+      <div id="Contenedor">
+		 <div class="Icon">
+                    <!--Icono de usuario-->
+                   <span class="glyphicon glyphicon-user"></span>
+                 </div>
+<div class="ContentForm">
+		 	<form action="usuario?action=login" method="post">
+		 		<div class="input-group input-group-lg">
+				  <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-user-circle" aria-hidden="true"></i></i></span>
+				  <input type="num" class="form-control" name="cedula" placeholder="Usuario" id="Usuario" aria-describedby="sizing-addon1" required>
 				</div>
-			</section> 
-   
-      <div class="cuadroredes">
+				<br>
+				<div class="input-group input-group-lg">
+				  <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-lock"></i></span>
+				  <input type="password" name="pass" class="form-control" placeholder="******" aria-describedby="sizing-addon1" required>
+				</div>
+				<br>
+				<button class="btn btn-lg btn-primary btn-block btn-signin" id="IngresoLog" type="submit">Entrar</button>
+				<div class="opcioncontra"><a href="#">Olvidaste tu contraseÃ±a?</a></div>
+		 	</form>
+		 </div>	
+		 
+
+        
+        <div class="cuadroredes">
     <ul class="social-icons social-icons-color margin-top-10">
-        <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="Síguenos en Facebook"><a href="https://www.facebook.com/UFPS-C%C3%BAcuta-553833261409690" class="rounded social_facebook"></a>
+        <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="SÃ­guenos en Facebook"><a href="https://www.facebook.com/UFPS-C%C3%BAcuta-553833261409690" class="rounded social_facebook"></a>
         </li>
-        <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="Síguenos en Twitter"><a href="https://twitter.com/UFPSCUCUTA" class="rounded social_twitter"></a></li>
-        <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="Síguenos en Youtube"><a href="https://www.youtube.com/channel/UCgPz-qqaAk4lbHfr0XH3k2g" class="rounded social_youtube"></a></li>
-        <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="Síguenos en Instagram">
+        <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="SÃ­guenos en Twitter"><a href="https://twitter.com/UFPSCUCUTA" class="rounded social_twitter"></a></li>
+        <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="SÃ­guenos en Youtube"><a href="https://www.youtube.com/channel/UCgPz-qqaAk4lbHfr0XH3k2g" class="rounded social_youtube"></a></li>
+        <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="SÃ­guenos en Instagram">
             <a href="https://www.instagram.com/ufpscucuta/" class="rounded social_instagram"></a></li>
         <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="Escuchanos en Vivo"><a href="#" class="rounded social_emisora"></a></li>
     </ul>
@@ -317,7 +284,7 @@
                 <!-- About -->
                 <div class="col-md-3 col-sm-4 md-margin-bottom-40">
                     <div class="footer-main">
-                        <a href="index.html"><img id="logo-footer" class="img-responsive" src="img/logoufpsvertical.png" alt="Logo Pie de Página"></a>
+                        <a href="index.html"><img id="logo-footer" class="img-responsive" src="img/logoufpsvertical.png" alt="Logo Pie de PÃ¡gina"></a>
                     </div>
                 </div><!--/col-md-3-->
                 <!-- End About -->
@@ -346,12 +313,12 @@
 
                 <!-- Link List -->
                 <div class="col-md-3 col-sm-4  md-margin-bottom-40">
-                    <div class="headline" style="border-bottom: #272727;"><h2>Enlaces de Interés</h2></div>
+                    <div class="headline" style="border-bottom: #272727;"><h2>Enlaces de InterÃ©s</h2></div>
                     <ul class="list-unstyled latest-list">
-                        <li><a href="#" style="text-transform: none;">Proceso de selección</a></li>
+                        <li><a href="#" style="text-transform: none;">Proceso de selecciÃ³n</a></li>
                         <li><a href="#" style="text-transform: none;">Convocatoria</a></li>
                         <li><a href="#" style="text-transform: none;">Calendarios</a></li>
-                        <li><a href="#" style="text-transform: none;">Proceso democrático 2015</a></li>
+                        <li><a href="#" style="text-transform: none;">Proceso democrÃ¡tico 2015</a></li>
                         <li><a href="#" style="text-transform: none;">Derechos pecuniarios </a></li>
                     </ul>
                 </div><!--/col-md-3-->
@@ -362,8 +329,8 @@
                     <div class="headline" style="border-bottom: #272727;"><h2>Contactos</h2></div>
                     <address class="md-margin-bottom-40">
                         Avenida Gran Colombia No. 12E-96 Barrio Colsag, <br>
-                        San José de Cúcuta - Colombia <br>
-                        Teléfono (057)(7) 5776655 <br>
+                        San JosÃ© de CÃºcuta - Colombia <br>
+                        TelÃ©fono (057)(7) 5776655 <br>
                         Correo: <a href="mailto:oficinadeprensa@ufps.edu.co" class="">oficinadeprensa@ufps.edu.co</a>
                     </address>
                 </div><!--/col-md-3-->
@@ -377,8 +344,8 @@
             <div class="row">
                 <div class="col-md-8">
                     <p>
-                        2016 © All Rights Reserved.
-                         Desarrollado por: <a href="#">VAVM - División de Sistemas</a>
+                        2016 Â© All Rights Reserved.
+                         Desarrollado por: <a href="#">VAVM - DivisiÃ³n de Sistemas</a>
                     </p>
                 </div>
 
@@ -419,57 +386,7 @@
 </div>
 
 
-<div class="owl-clients-v1" style="background-color:#EEE; padding: 5px;">
-    <div class="item">
-        <a href="http://www.mineducacion.gov.co/"><img src="img/mineducacion.png"class="hover-shadow" alt=""></a>
-    </div>
-    <div class="item">
-        <a href="http://www.contraloriagen.gov.co/"><img src="img/contraloria.png" class="hover-shadow" alt=""></a>
-    </div>
-    <div class="item">
-        <a href="http://www.procuraduria.gov.co/"><img src="img/procuraduriageneraldelanacion.png" class="hover-shadow" alt=""></a>
-    </div>
-    <div class="item">
-        <a href="http://www.gobiernoenlinea.gov.co/"><img src="img/gobiernoenlinea.png" class="hover-shadow" alt=""></a>
-    </div>
-    <div class="item">
-        <a href="http://www.urnadecristal.gov.co/"><img src="img/urnadecristal.png" class="hover-shadow" alt=""></a>
-    </div>
-    <div class="item">
-        <a href="http://www.icfes.gov.co/"><img src="img/icfes.png"class="hover-shadow" alt=""></a>
-    </div>
-    <div class="item">
-        <a href="http://www.icetex.gov.co/"><img src="img/icetex.png" class="hover-shadow" alt=""></a>
-    </div>
-    <div class="item">
-        <a href="http://www.universia.net.co/"><img src="img/universia.png" class="hover-shadow" alt=""></a>
-    </div>
-    <div class="item">
-        <a href="http://www.colombiaaprende.edu.co/"><img src="img/colombiaaprende.png" class="hover-shadow" alt=""></a>
-    </div>
-    <div class="item">
-        <a href="http://www.renata.edu.co/"><img src="img/renata-logo.png" class="hover-shadow" alt=""></a>
-    </div>
-    <div class="item">
-        <a href="http://www.colciencias.gov.co/"><img src="img/COLCIENCIAS.png" class="hover-shadow" alt=""></a>
-    </div>
-    <div class="item">
-        <a href="http://www.cna.gov.co/"><img src="img/cna.png" class="hover-shadow" alt=""></a>
-    </div>
-    <div class="item">
-        <a href="http://www.mineducacion.gov.co/sistemasdeinformacion/1735/propertyvalue-41698.html"><img src="img/SACES.png" class="hover-shadow" alt=""></a>
-    </div>
-    <div class="item">
-        <a href="http://www.mineducacion.gov.co/sistemasdeinformacion/1735/w3-propertyname-2672.html"><img src="img/SNIES.png" class="hover-shadow" alt=""></a>
-    </div>
-    <div class="item">
-        <a href="http://www.mineducacion.gov.co/sistemasdeinformacion/1735/w3-propertyname-2895.html"><img src="img/SPADIES.png" class="hover-shadow" alt=""></a>
-    </div>
 
-
-</div>
-
-    
      
 
         
@@ -511,7 +428,11 @@
 		<script type="text/javascript" src="js/owl-recent-works.min.js"></script>
         
 		<script type="text/javascript" src="js/wow.min.js"></script>     
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ <!-- Libreria java scritp de bootstrap -->
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
    
     </body>
+
     
 </html>

@@ -7,20 +7,22 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import negocio.Negocio;
-import prestamoDTO.Persona;
+import prestamoDTO.Elemento;
+import prestamoDTO.Espacio;
 
 /**
  *
- * @author DELL
+ * @author Juan
  */
-@WebServlet(name = "usuario", urlPatterns = {"/usuario"})
-public class usuario extends HttpServlet {
+@WebServlet(name = "elementoS", urlPatterns = {"/elementoS"})
+public class elementoS extends HttpServlet {
 Negocio n = new Negocio();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,30 +41,67 @@ Negocio n = new Negocio();
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet usuario</title>");            
+            out.println("<title>Servlet elementoS</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet usuario at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet elementoS at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
     }
     
-      public void loginUsuario(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        String user = request.getParameter("cedula");
-        String pasword=request.getParameter("pass");    
-          Persona u = new Persona();
-   u=  n.consultarPersona(user);
-if(u.getCedula().equalsIgnoreCase(user)&&u.getPasword().equalsIgnoreCase(pasword)){
-        request.setAttribute("registro","exito");
-        request.getRequestDispatcher("/perfil.jsp").forward(request, response);
-    }else{
-     request.getRequestDispatcher("/login.jsp").forward(request, response);
     
-}
+    public ArrayList<Elemento> listarElementos(){
+        return n.listarelementos();
+    }
     
+     public ArrayList<Espacio> listarEspacios(){
+        return n.listarespacios();
+    }
+    
+       public void eliminarDep(int id) {
+        this.n.eliminardependencia(id);
+    }
+    
+    
+    protected void registroDep(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        
+         String id = request.getParameter("id");
+         String nombre = request.getParameter("nombre");
+         String correo = request.getParameter("correo");
+         String telefono = request.getParameter("telefono");
+         String ubicacion = request.getParameter("ubicacion");
+         
+         Dependencia d = new Dependencia();
+         d.setId_dependencia(Integer.parseInt(id));
+         d.setNombre(nombre);
+         d.setCorreo(correo);
+         d.setTelefono(telefono);
+         d.setUbicacion(ubicacion);
+       
+         n.registrardependencia(d);       
+        
+    }
+    
+     protected void actualizarDep(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+         
+         
+         
+        
+         String id = request.getParameter("id");
+         String nombre = request.getParameter("nombre");
+         String correo = request.getParameter("correo");
+         String telefono = request.getParameter("telefono");
+         String ubicacion = request.getParameter("ubicacion");
+         
+       
+         n.actualizardependencia(Integer.parseInt(id), nombre, correo, telefono, ubicacion);
+         
+     }
 
-      }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -89,10 +128,7 @@ if(u.getCedula().equalsIgnoreCase(user)&&u.getPasword().equalsIgnoreCase(pasword
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         String param = request.getParameter("action");
-        if (param != null && param.equals("login")) {
-            this.loginUsuario(request, response);
-        }
+        processRequest(request, response);
     }
 
     /**

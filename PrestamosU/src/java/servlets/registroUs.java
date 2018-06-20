@@ -12,16 +12,16 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import negocio.Negocio;
 import prestamoDTO.Persona;
+import prestamoDTO.TipoPersona;
 
 /**
  *
- * @author DELL
+ * @author Juan
  */
-@WebServlet(name = "usuario", urlPatterns = {"/usuario"})
-public class usuario extends HttpServlet {
-Negocio n = new Negocio();
+@WebServlet(name = "registroUs", urlPatterns = {"/registroUs"})
+public class registroUs extends HttpServlet {
+negocio.Negocio n=new negocio.Negocio();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -39,30 +39,42 @@ Negocio n = new Negocio();
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet usuario</title>");            
+            out.println("<title>Servlet registroUs</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet usuario at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet registroUs at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
     }
     
-      public void loginUsuario(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        String user = request.getParameter("cedula");
-        String pasword=request.getParameter("pass");    
-          Persona u = new Persona();
-   u=  n.consultarPersona(user);
-if(u.getCedula().equalsIgnoreCase(user)&&u.getPasword().equalsIgnoreCase(pasword)){
-        request.setAttribute("registro","exito");
-        request.getRequestDispatcher("/perfil.jsp").forward(request, response);
-    }else{
-     request.getRequestDispatcher("/login.jsp").forward(request, response);
-    
-}
-    
+    public void registrous(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        String nombre = request.getParameter("nombre");
+        String apellido = request.getParameter("apellido");
+        String cedula = request.getParameter("cedula");
+        String telefono = request.getParameter("telefono");
+        String tipo=request.getParameter("Tipopersona");
+        String email = request.getParameter("correo");
+        String password = request.getParameter("pass");
+        
+          Persona p = new Persona();
+          TipoPersona tp=new TipoPersona();
+          boolean rt=false;
+          String t="1";
+//          if(tipo.equalsIgnoreCase("interna")){
+//             t=1;
+//          }else{
+//              t=2;
+//          }
+          tp=n.consultartipopersona(t);
+           p=new Persona(cedula, nombre, apellido, telefono, email, tp, password);
+              rt=n.registrarPersona(p);
+              if(rt==true){
+                  request.setAttribute("registro", "exito");
+                  request.getRequestDispatcher("/index.jsp").forward(request, response);
+              }
+    }
 
-      }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -90,9 +102,9 @@ if(u.getCedula().equalsIgnoreCase(user)&&u.getPasword().equalsIgnoreCase(pasword
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
          String param = request.getParameter("action");
-        if (param != null && param.equals("login")) {
-            this.loginUsuario(request, response);
-        }
+        if (param != null && param.equals("registrou")) {
+            this.registrous(request, response);
+    }
     }
 
     /**

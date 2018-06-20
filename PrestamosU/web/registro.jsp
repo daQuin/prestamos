@@ -1,9 +1,14 @@
+<%-- 
+    Document   : registro
+    Created on : 14/06/2018, 04:26:01 PM
+    Author     : Juan
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="es"> <!--<![endif]-->
-    <head>
-        <title>UFPS - Cúcuta</title>
+<!DOCTYPE html >
+ <head>
+        <title>UFPS - CÃºcuta</title>
 
         <!-- Meta -->
         
@@ -115,16 +120,16 @@
                             <li><a href="/universidad/perfiles/estudiantes/953"><i class="fa fa-user"></i> Estudiantes</a></li>
                             <li><a href="/universidad/perfiles/egresados/954"><i class="fa fa-graduation-cap"></i> Egresados</a></li>
                             <li><a href="#"><i class="fa fa-user-secret"></i> Docentes</a></li>
-                            <li><a href="inicio.jsp"><i class="fa fa-briefcase"></i> Administrador</a></li>
+                             <li><a href="#"><i class="fa fa-briefcase"></i> Administrativos</a></li>
 
 
 
                             <li class="cd-log_reg hidden-sm hidden-md hidden-lg"><strong><a class="cd-signup" href="javascript:void(0);">Lenguaje</a></strong>
                             <ul class="topbar-dropdown">
-                                    <li><a href="#">Inglés</a></li>
-                                    <li><a href="#">Español</a></li>
+                                    <li><a href="#">InglÃ©s</a></li>
+                                    <li><a href="#">EspaÃ±ol</a></li>
                                 </ul></li>
-                                 <li class="cd-log_reg hidden-sm hidden-md hidden-lg"><strong><a class="cd-signin" href="javascript:void(0);"><i class="fa fa-reply"></i> Versión Anterior</a></strong></li>
+                                 <li class="cd-log_reg hidden-sm hidden-md hidden-lg"><strong><a class="cd-signin" href="javascript:void(0);"><i class="fa fa-reply"></i> VersiÃ³n Anterior</a></strong></li>
                         </ul>
                     </div>
                     <div class="col-sm-5 col-xs-5 clearfix">
@@ -139,9 +144,7 @@
 
                              </li>
 
-                             <li class="cd-log_reg home">
-                                 <a href="registro.jsp"><i class="fa fa-user-plus" aria-hidden="true"></i> Registrarse</a>
-                            </li>
+                             
                         </ul>
                     </div>
                 </div><!--/end row-->
@@ -181,7 +184,7 @@
 
     <div class="menu-responsive">
         <!-- Logo -->
-        <a class="logo logo-responsive" href="index.html">
+        <a class="logo logo-responsive" href="index.jsp">
             <img src="img/horizontal_logo_pequeno.png" alt="Logo">
         </a>  
         <!-- End Logo -->
@@ -210,17 +213,17 @@
   <!-- Brand -->
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 
-  <a  class= "navbar-brand "  href="#">Inicio</a>
+            <a  class= "navbar-brand "  href="index.html">Inicio</a>
 
   <!-- Links -->
   <ul class="navbar-nav">
     <li class="nav-item">
         <a class="nav-link" href="login.jsp"><strong><big>Ingresar Como Interno</big></strong></a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#"><strong><big>Ingresar Como Externo</big></strong></a>
-    </li>
     
+      <li class="nav-item">
+      <a class="nav-link" href="#"><strong><big>Ingresar Como Externo</big></strong ></a>
+    </li>
       
  
   </ul>
@@ -230,76 +233,92 @@
 <br>
   
 <div class="container">
-  <p>holaaa</p>
-  
+ 
+  <li class="cd-log_reg home">
+  <center> <a href="registro.jsp"><i class="fa fa-user-o fa-4x" aria-hidden="true"></i>  REGISTRARSE</a></center>
+                            </li>
 </div>
       
       
-      <ul class="pgwSlider">
-
-            <li class="nav-item"><a class="nav-link" href="index2.html"><img src="img/ecb.jpg" width="1000" height="1000"><span style="font-family: inherit; font-weight: bold;">Auditorio Eustorgio Colmenares</span></a>
-        </li>
-                <li><a href="http://localhost:10003/unoticia/innovacion-creatividad-e-investigacion-la-propuesta-de-la-ufps-en-el-seminario-internacional-de-arquitectura"><img src="img/img10.jpg" width="200" height="200"><span style="font-family: inherit; font-weight: bold;">Auditorio Acero Jordan</span></a>
-        </li>
-                <li><a href="http://localhost:10003/unoticia/planton-por-la-paz-muestra-del-compromiso-de-la-ufps-por-la-construccion-de-una-nueva-colombia"><img src="img/img4.jpg" width="200" height="200"><span style="font-family: inherit; font-weight: bold;">Coliseo Cubierto UFPS</span></a>
-        </li>
-                <li><a href="http://localhost:10003/unoticia/festival-ufps-territorio-de-paz-escenario-de-pedagogia-analisis-reflexion-y-muestras-artisticas"><img src="img/img8.jpg" width="200" height="200"><span style="font-family: inherit; font-weight: bold;">Cancha Futbol UFPS</span></a>
-        </li>
-         <li><a href="http://localhost:10003/unoticia/festival-ufps-territorio-de-paz-escenario-de-pedagogia-analisis-reflexion-y-muestras-artisticas"><img src="img/img10.jpg" width="200" height="200"><span style="font-family: inherit; font-weight: bold;">Cancha MicroFutbol UFPS</span></a>
-        </li>
-        
-
-</ul>
-   
-      
-        <hr>
-        <h1><center>Eventos</center></h1>
-        <li class="cd-log_reg home">
-                                <a href="http://www.ufps.edu.co/ufps/index.php"> <i class="far fa-calendar-alt"></i> Eventos</a>
-                            </li>
-       
-      <section id="one" class="wrapper style1">
-				<div class="inner">
-					<article class="feature center">
-
-<a href="index2.html" class="image" ><img width="200" height="200" src="img/img10.jpg" alt="" /></a>
-                        <div class="content">
-							<h2></h2>
-							<p></p>
-							<ul class="actions">
-								<li>
-									<a href="#" class="button alt">Mas</a>
-								</li>
-							</ul>
-						</div>
-					</article>
-     
-     
-					<article class="feature right">
- 
-                              <h2>Auditorio Eustorgio Colmenares</h2>
+      <div class="container">
+        <div class="row centered-form">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+        	<div class="panel panel-default">
+        		<div class="panel-heading">
+			    		<h3 class="panel-title">Bienvenido Por Favor Registrese <small></small></h3>
+			 			</div>
+			 			<div class="panel-body">
+			    		<form action="registroUs?action=registrou" method="post">
+			    			<div class="row">
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			                <input type="text" name="nombre" id="first_name" class="form-control input-sm" placeholder="Nombres">
+			    					</div>
+			    				</div>
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			    						<input type="text" name="apellido" id="last_name" class="form-control input-sm" placeholder="Apellidos">
+			    					</div>
+			    				</div>
+                                
+                                
+                                
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			    						<input type="number" name="cedula" id="cedula" class="form-control input-sm" placeholder="cedula">
+			    					</div>
+			    				</div>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			    						<input type="number" name="telefono" id="telefono" class="form-control input-sm" placeholder="Telefono">
+			    					</div>
+			    				</div>
+                                <div class="form-group col-xs-20 col-sm-8 ">
+                    <label for="tipo">Tipo Persona:</label>
+                    <select class="form-control" id="TipoDocumento" name="Tipopersona">
+                        <option>Seleccione Tipo</option>
+                        <option value="pinterna">Interna</option>
+                        <option value="pexterna">Externa</option>
                         
-                        <img src="img/ecb.jpg"  alt="eustorgio" width="200" height="200" >
-                    						<div class="content">
-							
-							<p></p>
-							<ul class="actions">
-								<li>
-									<a href="#" class="button alt">Mas</a>
-								</li>
-							</ul>
-						</div>
-					</article>
-				</div>
-			</section> 
-   
-      <div class="cuadroredes">
+                    </select>
+                </div>
+                   
+                                
+			    			</div>
+
+			    			<div class="form-group">
+			    				<input type="email" name="correo" id="email" class="form-control input-sm" placeholder="Correo Electronico">
+			    			</div>
+
+			    			<div class="row">
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			    						<input type="password" name="pass" id="password" class="form-control input-sm" placeholder="Password">
+			    					</div>
+			    				</div>
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			    						<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+			    					</div>
+			    				</div>
+			    			</div>
+			    			
+			    			<input type="submit" value="Register" class="btn btn-info btn-block">
+			    		
+			    		</form>
+			    	</div>
+	    		</div>
+    		</div>
+    	</div>
+    </div>
+        
+        <div class="cuadroredes">
     <ul class="social-icons social-icons-color margin-top-10">
-        <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="Síguenos en Facebook"><a href="https://www.facebook.com/UFPS-C%C3%BAcuta-553833261409690" class="rounded social_facebook"></a>
+        <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="SÃ­guenos en Facebook"><a href="https://www.facebook.com/UFPS-C%C3%BAcuta-553833261409690" class="rounded social_facebook"></a>
         </li>
-        <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="Síguenos en Twitter"><a href="https://twitter.com/UFPSCUCUTA" class="rounded social_twitter"></a></li>
-        <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="Síguenos en Youtube"><a href="https://www.youtube.com/channel/UCgPz-qqaAk4lbHfr0XH3k2g" class="rounded social_youtube"></a></li>
-        <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="Síguenos en Instagram">
+        <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="SÃ­guenos en Twitter"><a href="https://twitter.com/UFPSCUCUTA" class="rounded social_twitter"></a></li>
+        <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="SÃ­guenos en Youtube"><a href="https://www.youtube.com/channel/UCgPz-qqaAk4lbHfr0XH3k2g" class="rounded social_youtube"></a></li>
+        <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="SÃ­guenos en Instagram">
             <a href="https://www.instagram.com/ufpscucuta/" class="rounded social_instagram"></a></li>
         <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="Escuchanos en Vivo"><a href="#" class="rounded social_emisora"></a></li>
     </ul>
@@ -317,7 +336,7 @@
                 <!-- About -->
                 <div class="col-md-3 col-sm-4 md-margin-bottom-40">
                     <div class="footer-main">
-                        <a href="index.html"><img id="logo-footer" class="img-responsive" src="img/logoufpsvertical.png" alt="Logo Pie de Página"></a>
+                        <a href="index.html"><img id="logo-footer" class="img-responsive" src="img/logoufpsvertical.png" alt="Logo Pie de PÃ¡gina"></a>
                     </div>
                 </div><!--/col-md-3-->
                 <!-- End About -->
@@ -346,12 +365,12 @@
 
                 <!-- Link List -->
                 <div class="col-md-3 col-sm-4  md-margin-bottom-40">
-                    <div class="headline" style="border-bottom: #272727;"><h2>Enlaces de Interés</h2></div>
+                    <div class="headline" style="border-bottom: #272727;"><h2>Enlaces de InterÃ©s</h2></div>
                     <ul class="list-unstyled latest-list">
-                        <li><a href="#" style="text-transform: none;">Proceso de selección</a></li>
+                        <li><a href="#" style="text-transform: none;">Proceso de selecciÃ³n</a></li>
                         <li><a href="#" style="text-transform: none;">Convocatoria</a></li>
                         <li><a href="#" style="text-transform: none;">Calendarios</a></li>
-                        <li><a href="#" style="text-transform: none;">Proceso democrático 2015</a></li>
+                        <li><a href="#" style="text-transform: none;">Proceso democrÃ¡tico 2015</a></li>
                         <li><a href="#" style="text-transform: none;">Derechos pecuniarios </a></li>
                     </ul>
                 </div><!--/col-md-3-->
@@ -362,8 +381,8 @@
                     <div class="headline" style="border-bottom: #272727;"><h2>Contactos</h2></div>
                     <address class="md-margin-bottom-40">
                         Avenida Gran Colombia No. 12E-96 Barrio Colsag, <br>
-                        San José de Cúcuta - Colombia <br>
-                        Teléfono (057)(7) 5776655 <br>
+                        San JosÃ© de CÃºcuta - Colombia <br>
+                        TelÃ©fono (057)(7) 5776655 <br>
                         Correo: <a href="mailto:oficinadeprensa@ufps.edu.co" class="">oficinadeprensa@ufps.edu.co</a>
                     </address>
                 </div><!--/col-md-3-->
@@ -377,8 +396,8 @@
             <div class="row">
                 <div class="col-md-8">
                     <p>
-                        2016 © All Rights Reserved.
-                         Desarrollado por: <a href="#">VAVM - División de Sistemas</a>
+                        2016 Â© All Rights Reserved.
+                         Desarrollado por: <a href="#">VAVM - DivisiÃ³n de Sistemas</a>
                     </p>
                 </div>
 

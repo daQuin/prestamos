@@ -6,6 +6,7 @@
 package prestamoDTO;
 
 import FACTORY.DaoFactory;
+import Interfaz.Iadministrador;
 import Interfaz.Idependencia;
 import Interfaz.Ielemento;
 import Interfaz.Iespacio;
@@ -61,6 +62,12 @@ public class Administrador {
 
     public void setPasword(String pasword) {
         this.pasword = pasword;
+    }
+    
+    
+     public Administrador consultarAdministrador(String user) {
+         Iadministrador a = factor.obtenerConexionAdmin(false);
+        return a.consultaradministrador(user);
     }
     
     

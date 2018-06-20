@@ -1,3 +1,14 @@
+<%-- 
+    Document   : dependencias
+    Created on : 18/06/2018, 09:02:20 AM
+    Author     : Juan
+--%>
+
+<%@page import="servlets.dependencia"%>
+<%@page import="prestamoDTO.Espacio"%>
+<%@page import="prestamoDTO.Dependencia"%>
+<%@page import="prestamoDTO.Elemento"%>
+<%@page import="servlets.espacios"%>
 <!DOCTYPE html >
 <head>
     <title>UFPS - Cúcuta</title>
@@ -84,6 +95,8 @@
 <link type="text/css" rel="stylesheet" href="css/custom.min.css">
 <link type="text/css" rel="stylesheet" href="css/pgwslider.min.css">
 
+<link rel="stylesheet" type="text/css" href="css/default.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
 
 
 
@@ -108,32 +121,27 @@
                             <div class="col-sm-7 col-xs-7">
 
                                 <div class="topbar-toggler" style="font-size: 10px; color: #eee; letter-spacing: 1px; text-transform: uppercase;"><span class="fa fa-angle-down"></span> PERFILES</div>
-                                <ul class="topbar-list topbar-menu">
-                                    <li><a href="/universidad/perfiles/estudiantes/953"><i class="fa fa-user"></i> Estudiantes</a></li>
-                                    <li><a href="/universidad/perfiles/egresados/954"><i class="fa fa-graduation-cap"></i> Egresados</a></li>
-                                    <li><a href="#"><i class="fa fa-user-secret"></i> Docentes</a></li>
-                                    <li><a href="inicio.jsp"><i class="fa fa-briefcase"></i> Administrador</a></li>
-
-
-
-                                    <li class="cd-log_reg hidden-sm hidden-md hidden-lg"><strong><a class="cd-signup" href="javascript:void(0);">Lenguaje</a></strong>
+                                <!--    <ul class="topbar-list topbar-menu">
+                                        <li><a href="/universidad/perfiles/estudiantes/953"><i class="fa fa-user"></i> Estudiantes</a></li>
+                                        <li><a href="/universidad/perfiles/egresados/954"><i class="fa fa-graduation-cap"></i> Egresados</a></li>
+                                        <li><a href="#"><i class="fa fa-user-secret"></i> Docentes</a></li>
+                                         <li><a href="#"><i class="fa fa-briefcase"></i> Administrativos</a></li>
+            
+            
+            
+                                        <li class="cd-log_reg hidden-sm hidden-md hidden-lg"><strong><a class="cd-signup" href="javascript:void(0);">Lenguaje</a></strong>
                                         <ul class="topbar-dropdown">
-                                            <li><a href="#">Inglés</a></li>
-                                            <li><a href="#">Español</a></li>
-                                        </ul></li>
-                                    <li class="cd-log_reg hidden-sm hidden-md hidden-lg"><strong><a class="cd-signin" href="javascript:void(0);"><i class="fa fa-reply"></i> Versión Anterior</a></strong></li>
-                                </ul>
+                                                <li><a href="#">Inglés</a></li>
+                                                <li><a href="#">Español</a></li>
+                                            </ul></li>
+                                             <li class="cd-log_reg hidden-sm hidden-md hidden-lg"><strong><a class="cd-signin" href="javascript:void(0);"><i class="fa fa-reply"></i> Versión Anterior</a></strong></li>
+                                    </ul>-->
                             </div>
                             <div class="col-sm-5 col-xs-5 clearfix">
-                                <i class="fa fa-search search-btn pull-right"></i>
+                                <i class="fa fa-institution search-btn pull-right"></i>
                                 <ul class="topbar-list topbar-log_reg pull-right visible-sm-block visible-md-block visible-lg-block">
                                     <li class="cd-log_reg home" style="padding: 0px 12px;">
-                                        <div id="google_translate_element"></div><script type="text/javascript">
-                                            function googleTranslateElementInit() {
-                                                new google.translate.TranslateElement({pageLanguage: 'es', includedLanguages: 'en,fr,it', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
-                                            }
-                                        </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+                                        <a href="index.jsp">Salir</a>
                                     </li>
 
 
@@ -205,82 +213,222 @@
     <!-- Brand -->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 
-        <a  class= "navbar-brand "  href="index.jsp">Inicio</a>
+        <a  class= "navbar-brand "  href="#">Inicio</a>
 
         <!-- Links -->
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="login.jsp"><strong><big>Ingresar Como Interno</big></strong></a>
-            </li>
-           
-            <li class="nav-item">
-                <a class="nav-link" href="inicio.jsp"><strong><big>Ingresar Como Externo</big></strong ></a>
-            </li>
-
-
-        </ul>
+        <!-- <ul class="navbar-nav">
+           <li class="nav-item">
+               <a class="nav-link" href="index2.html"><strong><big>Ingresar Como Estudiante</big></strong></a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link" href="#"><strong><big>Ingresar Como Docente</big></strong></a>
+           </li>
+             <li class="nav-item">
+             <a class="nav-link" href="#"><strong><big>Ingresar Como Externo</big></strong ></a>
+           </li>
+             
+        
+         </ul>-->
 
     </nav>
 
     <br>
 
+    <div style="width: 20%; float:left;">
+        <div id="menu">
+            <ul>
+                <li><a title="" href="homeAdmin.jsp">Espacios</a></li>
+                <li><a title="" href="">Elementos</a></li>
+                <li><a title="" href="">Eventos</a></li>
+                <li><a title="" href="dependencia.jsp">Dependencia</a></li>
+             </ul>
+
+        </div>
+
+    </div>
+
+    <%
+        dependencia d = new dependencia();
+    %>
+
     <div class="container">
-
-        <li class="cd-log_reg home">
-        <center> <a href="registro.jsp"><i class="fa fa-user-o fa-4x" aria-hidden="true"></i>  REGISTRARSE</a></center>
-    </li>
-</div>
-
-
-<div class="container">
-    <div class="row centered-form">
-        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Bienvenido Por Favor Registrese <small></small></h3>
+        <form action="dependencia?action=registrar" method="post">
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="documento">Id</label>
+                        <input type="text" class="form-control" id="id" placeholder="Id" name="id">
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo</label>
+                        <input type="email" class="form-control" id="correo" placeholder="Correo" name="correo">
+                    </div>
+                    
+                   
+                    
                 </div>
-                <div class="panel-body">
-                    <form action="admin?action=login" method="post">
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <label for="documento">Usuario</label>
-                                    <input type="text" class="form-control" id="nombre" placeholder="User" name="nombre">
-                                </div>
-                               
-                            </div>
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <label for="celular">Password</label>
-                                    <input type="password" class="form-control" id="pass" placeholder="password" name="pass">
-                                </div>
-
-                            </div>
-                            <div class="col-4 offset-4">
-                                <input type="submit" style="width: 100%;" value="registrar" class="btn btnf btn-primary">
-                            </div>
-                        </div>
-                    </form>
+                <div class="col-6">
+                 <div class="form-group">
+                        <label for="telefono">Telefono</label>
+                        <input type="number" class="form-control" id="correo" placeholder="Telefono" name="telefono">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="ubicacion">Ubicacion</label>
+                        <input type="text" class="form-control" id="correo" placeholder="Ubicacion" name="ubicacion">
+                    </div>
                 </div>
+                <div class="col-4 offset-4">
+                    <input type="submit" style="width: 100%;" value="registrar" class="btn btnf btn-primary">
+                </div>
+            </div> 
+        </form>
+
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                Id
+                            </th>
+                            <th>
+                                Nombre
+                            </th>
+                            <th>
+                                Correo
+                            </th>                   
+                            <th>
+                                Telefono
+                            </th>                   
+                            <th>
+                                Ubicacion
+                            </th>                   
+                            <th>
+                                Acciones
+                            </th>                   
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%
+                            for (Dependencia dep :d.listarDependencias() ) {
+
+
+                        %>
+
+                        <tr>
+                            <td>
+                                <%=dep.getId_dependencia()%>
+                            </td>
+                            <td>
+                                <%=dep.getNombre()%>
+                            </td>
+                            <td>
+                                <%=dep.getCorreo()%>
+                            </td>
+                            <td>
+                                <%=dep.getTelefono()%>
+                            </td>
+                            <td>
+                                <%=dep.getUbicacion()%>
+                            </td>
+                            <td>
+                                <a href="dependencia?action=delete&id=<%=dep.getId_dependencia()%>" class="btn btn-danger">Eliminar</a>
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal<%=dep.getId_dependencia()%>">Actualizar</button>
+
+                                <!-- Modal -->
+                                <div id="myModal<%=dep.getId_dependencia()%>" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title"></h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Editar el Registro <%=dep.getId_dependencia()%></p>
+
+                                                <form action="dependencia?action=actualizar" method="post">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <div class="form-group">
+                                                                <label for="id">Id</label>
+                                                                <input type="text" value="<%=dep.getId_dependencia()%>" class="form-control" id="id" placeholder="Id" name="id" readonly="">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="nombre">Nombre</label>
+                                                                <input type="text" value="<%=dep.getNombre()%>" class="form-control" id="nombre" placeholder="Nombre" name="nombre">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="email">Correo</label>
+                                                                <input type="email" value="<%=dep.getCorreo()%>" class="form-control" id="dimencion" placeholder="Correo" name="correo">
+                                                            </div>
+                                                            
+                                                        </div>
+                                                        <div class="col-6">
+                                                            
+                                                            <div class="form-group">
+                                                                <label for="text">Telefono</label>
+                                                                <input type="number" value="<%=dep.getTelefono()%>" class="form-control" id="dimencion" placeholder="Telefono" name="telefono">
+                                                               
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="ubicacion">Ubicacion</label>
+                                                                <input type="text" value="<%=dep.getUbicacion()%>" class="form-control" id="capacidad" placeholder="Ubicacion" name="ubicacion">
+                                                            </div>
+                                                            
+                                                         
+                                                        </div>
+                                                        <div class="col-4 offset-4">
+                                                            <input type="submit" style="width: 100%;" value="actualizar" class="btn btnf btn-primary">
+                                                        </div>
+                                                    </div> 
+                                                </form>
+
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </td>
+                            <%}%>
+
+                        </tr>
+                    </tbody>
+
+                </table>
             </div>
         </div>
+
+
+        <br>
+
     </div>
-</div>
 
-<div class="cuadroredes">
-    <ul class="social-icons social-icons-color margin-top-10">
-        <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="Síguenos en Facebook"><a href="https://www.facebook.com/UFPS-C%C3%BAcuta-553833261409690" class="rounded social_facebook"></a>
-        </li>
-        <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="Síguenos en Twitter"><a href="https://twitter.com/UFPSCUCUTA" class="rounded social_twitter"></a></li>
-        <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="Síguenos en Youtube"><a href="https://www.youtube.com/channel/UCgPz-qqaAk4lbHfr0XH3k2g" class="rounded social_youtube"></a></li>
-        <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="Síguenos en Instagram">
-            <a href="https://www.instagram.com/ufpscucuta/" class="rounded social_instagram"></a></li>
-        <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="Escuchanos en Vivo"><a href="#" class="rounded social_emisora"></a></li>
-    </ul>
-</div>
-<!-- FIN ICONOS REDES SOCIALES -->
+    <div class="cuadroredes">
+        <ul class="social-icons social-icons-color margin-top-10">
+            <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="Síguenos en Facebook"><a href="https://www.facebook.com/UFPS-C%C3%BAcuta-553833261409690" class="rounded social_facebook"></a>
+            </li>
+            <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="Síguenos en Twitter"><a href="https://twitter.com/UFPSCUCUTA" class="rounded social_twitter"></a></li>
+            <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="Síguenos en Youtube"><a href="https://www.youtube.com/channel/UCgPz-qqaAk4lbHfr0XH3k2g" class="rounded social_youtube"></a></li>
+            <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="Síguenos en Instagram">
+                <a href="https://www.instagram.com/ufpscucuta/" class="rounded social_instagram"></a></li>
+            <li class="tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="Escuchanos en Vivo"><a href="#" class="rounded social_emisora"></a></li>
+        </ul>
+    </div>
+    <!-- FIN ICONOS REDES SOCIALES -->
 
-<!-- End Content Part -->
+    <!-- End Content Part -->
 </div><!--/wrapper-->
 <!--=== Footer Version 1 ===-->
 <!-- organismos de control -->
